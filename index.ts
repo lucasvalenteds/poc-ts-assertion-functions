@@ -6,7 +6,7 @@ export type Name = string & {
   [lowerCaseOnly]: true;
 };
 
-export function assertIsName(name: string): asserts name is Name {
+export function assertName(name: string): asserts name is Name {
   const containsNumbers = new RegExp(/\d/);
   if (containsNumbers.exec(name)) {
     throw Error(`Name: '${name}' cannot contain numbers`);
