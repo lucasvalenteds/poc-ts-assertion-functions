@@ -3,6 +3,7 @@ export declare const lowerCaseOnly: unique symbol;
 
 export type Name = string & {
   [charactersOnly]: true;
+  [lowerCaseOnly]: true;
 };
 
 export function assertIsName(name: string): asserts name is Name {

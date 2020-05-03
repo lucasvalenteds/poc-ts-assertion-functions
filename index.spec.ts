@@ -24,6 +24,17 @@ test("Failing when array item contains symbols", () => {
   }
 });
 
+test("Failing when array item contains upper case letters", () => {
+  expect.assertions(1);
+  const name = "Name";
+
+  try {
+    assertIsName(name);
+  } catch (error) {
+    expect(error.message).toStrictEqual("Name: 'Name' cannot contain symbols");
+  }
+});
+
 test("A guest book contains names", () => {
   const john = "john";
   assertIsName(john);
