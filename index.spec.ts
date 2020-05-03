@@ -36,10 +36,8 @@ test("Failing when array item contains upper case letters", () => {
 });
 
 test("A guest book contains names", () => {
-  const john = "john";
+  const [john, mary] = ["john", "mary"];
   assertIsName(john);
-
-  const mary = "mary";
   assertIsName(mary);
 
   const bag: GuestBook = {
