@@ -5,7 +5,7 @@ export type Name = string & {
   [charactersOnly]: true;
 };
 
-export function assertCharacterOnly(name: string): asserts name is Name {
+export function assertIsName(name: string): asserts name is Name {
   const containsNumbers = new RegExp(/\d/);
   if (containsNumbers.exec(name)) {
     throw Error(`Name: '${name}' cannot contain numbers`);

@@ -1,11 +1,11 @@
-import { GuestBook, assertCharacterOnly } from "./";
+import { GuestBook, assertIsName } from "./";
 
 test("Failing when array item contains number", () => {
   expect.assertions(1);
   const name = "123";
 
   try {
-    assertCharacterOnly(name);
+    assertIsName(name);
   } catch (error) {
     expect(error.message).toStrictEqual("Name: '123' cannot contain numbers");
   }
@@ -16,7 +16,7 @@ test("Failing when array item contains symbols", () => {
   const name = "some-name";
 
   try {
-    assertCharacterOnly(name);
+    assertIsName(name);
   } catch (error) {
     expect(error.message).toStrictEqual(
       "Name: 'some-name' cannot contain symbols"
@@ -26,10 +26,10 @@ test("Failing when array item contains symbols", () => {
 
 test("A guest book contains names", () => {
   const john = "john";
-  assertCharacterOnly(john);
+  assertIsName(john);
 
   const mary = "mary";
-  assertCharacterOnly(mary);
+  assertIsName(mary);
 
   const bag: GuestBook = {
     names: [john, mary],
