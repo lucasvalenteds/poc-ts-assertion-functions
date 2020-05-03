@@ -40,9 +40,9 @@ test("A guest book contains names", () => {
   assertIsName(john);
   assertIsName(mary);
 
-  const bag: GuestBook = {
+  const guestBook: GuestBook = {
     names: [john, mary],
   };
 
-  expect(bag.names).toStrictEqual(["john", "mary"]);
+  expect(guestBook.names).toStrictEqual(["john", "mary"]);
 });
