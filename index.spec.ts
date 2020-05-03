@@ -13,14 +13,12 @@ test("Failing when array item contains number", () => {
 
 test("Failing when array item contains symbols", () => {
   expect.assertions(1);
-  const name = "some-name";
+  const name = "a-b";
 
   try {
     assertIsName(name);
   } catch (error) {
-    expect(error.message).toStrictEqual(
-      "Name: 'some-name' cannot contain symbols"
-    );
+    expect(error.message).toStrictEqual("Name: 'a-b' cannot contain symbols");
   }
 });
 
