@@ -1,4 +1,4 @@
-# POC: Opaque Types
+# POC: Assertion functions
 
 It demonstrates how to implement high level types which hides validation logic.
 
